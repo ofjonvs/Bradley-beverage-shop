@@ -3,17 +3,9 @@
 
 
 
+ Bradley Beverage Shop
 
-Minnie and Mickey are getting ready to send out Holiday bonuses to their hard working employees in Retail District #5. The bonuses are calculated based on how much each retail store sold in each category. The retail store with the highest amount sold in a category will receive $5,000. The retail store with the lowest amount sold in a category will receive $1,000. All other retail stores in district #5 will receive $2,000. If a retail store didn’t sale anything in a category, or they have a negative sales amount, they are not eligible for a bonus in that category. If only one retail store sold items in a category, they are eligible to receive only the bonus of $5000 for that category.
-
-
-
-
-
-Create a utility class that manipulates a two-dimensional ragged array of doubles. This utility class will be used to create a Sales Report for Retail District #5. It will accommodate positive and negative numbers. Follow the Javadoc provided. 
-Create a utility class that will calculate holiday bonuses given a ragged array of doubles which represent the sales for each store in each category. It will also take in bonus amount for the store with the highest sales in a category, the bonus amount for the store with the lowest sales in a category and the bonus amount for all other stores.
-These utility classes will be used with an existing GUI class to create a sales report and display holiday bonuses.
-Testing of these utility classes will be done with the JUnit tests and the GUI class provided for you.
+Bradley shop is a family owned store that sells beverages.  The store offers 3 types of beverages: Coffee, Alcohol, and Smoothie. The store is open between 8a and 11p.  The owner of the shop likes to automate the order transactions and reports; he is thinking about “checking out the software” from you for one month.  You need to implement this software based on the following requirements.
 
 Academic Honesty Policy – Do your own work!  Each project submission will be compared against other submissions from current and previous semesters.  
 
@@ -27,93 +19,176 @@ o	A 28% deduction will be imposed on any project that did not include these test
 
 
 
+BevShop (The Data Manager Class)
 
-•	Creating classes based on Javadoc
-•	Two Dimensional Ragged Arrays
-•	Passing arrays to and from methods
-•	Creating a Utility class (static methods)
-•	JUnit testing
-•	Reading from a file
-•	Writing to a file	
-•	Using methods of the utility class within an existing GUI driver class
-o	Must follow Javadoc to implement correctly
+The BevShop offers 3 types of beverages: Coffee, Alcoholic and Smoothie. Beverages can be ordered in 3 different sizes: Small, medium and large. All the beverage types have a base price. In addition there are additional charges depending on the size and specific add-ons for each type of beverage.
 
+The BevShop has the following functionality:
 
-
+•	Create and process orders of different types of beverages
+•	Provide information on all the orders 
+•	Total amount on a specific order
+•	Monthly total number of orders
+•	Monthly sale report
 
 
-Utility class - TwoDimRaggedArrayUtility
-The class TwoDimRaggedArrayUtility will follow the provided Javadoc and will contain the following methods: 
-1.	Method readFile – pass in a file and return a two-dimensional ragged array of doubles
-2.	Method writeToFile – pass in a two-dimensional ragged array of doubles and a file, and writes the ragged array into the file. Each row is on a separate line and each double is separated by a space. 
-3.	Method getTotal – pass in a two-dimensional ragged array of doubles and returns the total of the elements in the array.
-4.	Method getAverage – pass in a two-dimensional ragged array of doubles and returns the average of the elements in the array (total/num of elements).
-5.	Method getRowTotal – pass in a two-dimensional ragged array of doubles and a row index and returns the total of that row. Row index 0 is the first row in the array.
-6.	Method getColumnTotal - pass in a two-dimensional ragged array of doubles and a column index and returns the total of that column. Column index 0 is the first column in the array. If a row doesn’t contain that column, it is not an error, that row will not participate in this method.
-7.	Method getHighestInRow - pass in a two-dimensional ragged array of doubles and a row index and returns the largest element in that row. Row index 0 is the first row in the array.
-8.	Method getHighestInRowIndex - pass in a two-dimensional ragged array of doubles and a row index and returns the index of the largest element in that row. Row index 0 is the first row in the array.
-9.	Method getLowestInRow - a two-dimensional ragged array of doubles and a row index and returns the smallest element in that row. Row index 0 is the first row in the array.
-10.	Method getLowestInRowIndex - a two-dimensional ragged array of doubles and a row index and returns the index of the smallest element in that row. Row index 0 is the first row in the array.
-11.	Method getHighestInColumn - pass in a two-dimensional ragged array of doubles and a column index and returns the largest element in that column. Column index 0 is the first column in the array. If a row doesn’t contain that column, it is not an error, that row will not participate in this method.
-12.	Method getHighestInColumnIndex - pass in a two-dimensional ragged array of doubles and a column index and returns the index of the largest element in that column. Column index 0 is the first column in the array. If a row doesn’t contain that column, it is not an error, that row will not participate in this method.
-13.	Method getLowestInColumn - pass in a two-dimensional ragged array of doubles and a column index and returns the smallest element in that column. Column index 0 is the first column in the array. If a row doesn’t contain that column, it is not an error, that row will not participate in this method.
-14.	Method getLowestInColumnIndex - pass in a two-dimensional ragged array of doubles and a column index and returns the index of the smallest element in that column. Column index 0 is the first column in the array. If a row doesn’t contain that column, it is not an error, that row will not participate in this method.
-15.	Method getHighestInArray - pass in a two-dimensional ragged array of doubles and returns the largest element in the array.
-16.	Method getLowestInArray - pass in a two-dimensional ragged array of doubles and returns the smallest element in the array.
 
-Utility class – HolidayBonus
-The class HolidayBonus will follow the provided Javadoc and will contain the following methods: 
-1.	Method calculateHolidayBonus – pass in a two-dimensional ragged array of doubles, and the bonus amount for the store with the highest sales in a category, the bonus amount for the store with the lowest sales in a category and bonus amount for all other stores. It will return an array of doubles which represents the holiday bonuses for each of the stores in the district. The first entry in the returned array [0] will represent the holiday bonus for the store at [0] in the two-dimensional ragged array of doubles. You will be using methods from the TwoDimRaggedArrayUtility when needed.
-2.	Method calculateTotalHolidayBonus – pass in a two-dimensional ragged array of doubles, and the bonus amount for the store with the highest sales in a category, the bonus amount for the store with the lowest sales in a category and bonus amount for all other stores. It will return a double which represents the total of all Holiday Bonuses for the District. You will be using methods from the TwoDimRaggedArrayUtility when needed.
 
-GUI Application – provided for you
-1.	Uses methods of TwoDimRaggedArrayUtility and HolidayBonus
-2.	When the Load Sales Data button is selected the sales data is read from a file and displayed on the screen with the sales data as well as the totals for each store and the totals for each category. The largest sales for each category is highlighted in green. The smallest sales for each category is highlighted in red. The holiday bonus for each store is displayed as well as the total of holiday bonuses.
-3.	The file contains a row for each store and each double in the row is separated by a space
-4.	Student must provide two additional input files and a screenshot of the results of each. Each file will have at least 4 rows and up to 6 numbers on each row. They must represent ragged arrays.
 
-JUnit Test
-1.	Student will implement TwoDimRaggesArrayUtilityTestSTUDENT
-2.	Student will implement HolidayBonusTestSTUDENT
+•	Aggregation
+•	Searching an Arraylist
+•	Selection sort
+•	Enumeration
+•	Inheritance
+•	Interface
+•	Polymorphism
+•	Abstract classes
+•	Overriding methods
 
 
 
 
 
 
+OrderInterface 
+This interface is provided; it will need to be implemented by the Order class.
+
+BevShopInterface
+This interface is provided; it will need to be implemented by the BevShop class.
 
 
-When GUI application starts (provided), user is shown display of Store Names and Item Names
-User selects Load Sales Data to select the file containing the sales data. The application then displays the sales for each store and each item as well as the totals for the store and the totals for the item. The store with the highest sales for each item will be highlighted. 
-Exit will exit the application. 
 
-File Format
-The file will be in the following format: one store per line, each sales figure is separated by a space.
+
+
+
+Enumerated Type – DAY
+Create an enumerated type called DAY.  The valid values will be MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY.
+Enumerated Type – SIZE
+Create an enumerated type called SIZE.  The valid values will be SMALL, MEDIUM, LARGE.
+Enumerated Type – TYPE
+Create an enumerated type called TYPE.  The valid values will be COFFEE, SMOOTHIE, ALCOHOL
+
+Data Element - Beverage
+Create an abstract class called Beverage with:
+•	Instance variables for beverage name, beverage type, size, and constant attributes for the base price ($2.0) and size price (additional $1 to go a size up).
+•	A parametrized constructor to create a Beverage object given its name, type and  size
+•	An abstract methods called calcPrice that calculates and returns the beverage price. 
+•	An Overridden  toString method: String representation for Beverage including the name and size
+•	An Overridden  equals method: checks equality based on name, type, size of the beverage
+•	getters and setters as needed
+•	Use finals to represent constants
+
  
+Data Element – subclasses of Beverage
+Create the following subclasses of Beverage for the 3 types of beverages: 
+
+Coffee
+•	Contains additional instance variables of type boolean to indicate if it contains extra shot of coffee (additional cost of 50 cents) and extra syrup (additional cost of 50 cents).   
+•	A parametrized constructor  
+•	An Overridden  toString method: String representation of Coffee beverage, including the name , size ,  whether it contains extra shot, extra syrup and the price of the coffee
+•	An Overridden calcPrice method.
+•	An Overridden  equals method: checks equality based on the Beverage class equals method and additional instance variables for this class.
+•	getters and setters  and any other methods that are needed for your design.
+•	Use finals to represent constants.
+
+Smoothie
+•	Contains additional instance variables for number of fruits and boolean variable to indicate if protein powder is added to the beverage. The cost of adding protein is $1.50 and each additional fruit costs 50 cents.
+•	A parametrized constructor  
+•	An Overridden toString method: String representation of a Smoothie drink including the name , size, whether or not protein is added , number of fruits and the price
+•	An Overridden equals method: checks equality based on the Beverage class equals method and additional instance variables for this class.
+•	An Overridden calcPrice method.
+•	getters and setters  and any other methods that are needed for your design.
+•	Use finals to represent constants.
+
+Alcohol
+•	Contains additional instance variable for weather or not it is offered in the weekend.  The additional cost for drinks offered in the weekend is 60 cents. 
+•	A parametrized constructor  
+•	An Overridden toString method: String representation of a alcohol drink including the name, size, whether or not beverage is offered in the weekend and the price.
+•	An Overridden equals method: checks equality based on the Beverage class equals method and additional instance variables for this class.
+•	An Overridden calcPrice method.
+•	getters and setters  and any other methods that are needed for your design.
+•	Use finals to represent constants.
+
+
+
+Data Element – Customer
+Create a class to represent a customer.
+•	Instance variables for  name and age
+•	A parametrized constructor 
+•	A Copy constructor  
+•	An Overridden  toString method: String representation for Customer including the name and age
+•	getters and setters  and any other methods that are needed for your design.  
+
+
+
+Data Element – Order 
+Create a class to represent an order. This class implements two interfaces: OrderInterface and Comparable.  
+•	Instance variables for  order number, order time, order day and customer and a list of beverages within this order
+•	A method to generate a random number within the range of 10000 and 90000
+•	A parametrized constructor 
+•	A method called addNewBeverage that adds a beverage to the order.  This is an overloaded method to add different beverages to the order.  Refer to the interface OrderInterface provided for you,
+•	An Overridden toString method: Includes order number, time, day, customer name , customer age and the list of beverages (with information of the beverage).
+•	Override the compareTo method to compare this order with another order based on the order number. Returns 0 if this order number is same as another order's order number, 1 if it is greater than another order's order number, -1 if it smaller than another order's order number.
+•	getters and setters  and any other methods that are needed for your design.   Note: The getter method for the customer returns a Deep copy of the customer.
+•	Refer to provided OrderInterface interface for additional methods.
+
+Data Manager – BevShop
+Create a class to represent a beverage shop. This class implements BevShopInterface provided to you. 
+•	Instance variable for the number of Alcohol drinks ordered for the current order. The current order in process can have at most 3 alcoholic beverages.
+•	An instance  list to keep track of orders
+•	The minimum age to order alcohol drink is 21
+•	  time, order day and customer and a list of beverages Order within this order
+•	 An Overridden toString method: The string representation of all the orders and the total monthly sale.  
+•	Refer to provided BevShopInterface interface for additional methods.
+
+Data Structure
+•	You will be using an Arraylist within your Order to hold beverages of the order and BevShop class to hold orders.
+External Documentation
+•	Provide a UML diagram with all classes and their relationships.
+
+Testing
+There is no GUI provided for this project. To test your project you may (recommended but not required) to create your own driver file for each class as you gradually implement code.
+•	Ensure that  BevShopNoGUITest.java produces the following output:
 
 
 
 
-When application starts: 
- 
 
-File containing sales data:
- 
 
-Result after selecting Load Sales Data:
- 
 
-File containing sales data (including negative numbers):
- 
 
-Result after selecting Load Sales Data:
- 
 
-File containing sales data (including negative numbers):
- 
 
-Result after selecting Load Sales Data:
- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+•	Ensure that all the given JUnit tests .java succeed.
+
+
+
+
+
+
+
+
 
 
 
@@ -121,29 +196,33 @@ Result after selecting Load Sales Data:
 
 
 Deliverables / Submissions: 
-Design: UML class diagram with algorithm (pseudo-code) for methods
-Implementation: Submit a compressed file containing the follow (see below):  The Java application (it must compile and run correctly); Javadoc files in a directory; a write-up as specified below.  Be sure to review the provided project rubric to understand project expectations.  The write-up will include:  
-•	Test Cases (These are the ones you will use in your STUDENT test methods in the JUnit test)
-o	Prepare a test table with a list of test cases (expected versus actual results) that you are testing the application with
-•	UML diagram
+
+GitHub: Upload all input files and all implemented files into GitHub in the repo you created in Lab 1 in a directory named CMSC203_Assignment6.
+
+Design: UML class diagram.
+Implementation: Submit a compressed file containing the follow (see below):  The Java application (it must compile and run correctly); a write-up as specified below.  Be sure to review the provided project rubric to understand project expectations.  The write-up will include:  
+•	UML diagram – latest version
 •	Any assumptions that you are making for this project
-•	In three or more paragraphs, highlights of your learning experience
+•	Highlights of your learning experience. What were you successful at, and what (if anything) were you not able to implement?
 	 
 Deliverable format: The above deliverables will be packaged as follows. Two compressed files in the following formats:
-•	LastNameFirstName_Assignment5_Complete.zip, a compressed file in the zip format, with the following:
+Notice: Only submit the files that you implemented/Modified.
+•	LastNameFirstName_Assignment6_Complete.zip, a compressed file in the zip format, with the following:
 •	Write up (Word document) - reflection paragraphs
 •	UML Diagram - latest version (Word or jpg document)
-•	doc (directory) - Javadoc
+•	subdirectories and other files
 •	File1.html (example)
 •	File2.html (example)
-•	src (directory)  
+•	src (directory) – Java and JUnit tests files
 •	File1.java (example)
 •	File2.java (example)
 •	Filetest.java (example)
-•	LastNameFirstName_Assignment5_Moss.zip, a compressed file containing one or more Java files:
+•	LastNameFirstName_Assignment6_Moss.zip, a compressed file containing one or more Java files:
 •	File1.java (example)
 •	File2.java (example)
 •	Filetest.java (example)
-•	This folder should contain Java source files only
+   This folder should contain Java source files only
 
-![image](https://user-images.githubusercontent.com/90938278/176967226-58afbc92-5193-490f-8a8c-c06df5e4c0b4.png)
+
+
+![image](https://user-images.githubusercontent.com/90938278/176967252-d06e9afe-16cb-4025-9a84-069f83cc9409.png)
