@@ -1,0 +1,4 @@
+package abc;
+
+	public enum DAY{MONDAY, TUESDAY, WEDNESDAY,THURSDAY, FRIDAY, SATURDAY, SUNDAY;}
+
